@@ -39,7 +39,7 @@
                                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                         <use xlink:href="#home"></use>
                                     </svg>
-                                    Home 
+                                    Home
                                     <i class="bi bi-house"></i>
                                 </a>
                             </li>
@@ -60,7 +60,7 @@
                                     </svg>
 
                                     National park Info
-                                    <i class="bi bi-bicycle"></i>  
+                                    <i class="bi bi-bicycle"></i>
                                 </a>
                             </li>
 
@@ -71,6 +71,40 @@
             </div>
 
         </div>
+    </div>
+    <!--Navbar closed-->
+    <h1>National parks</h1>
+    <div class="intro-border">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, esse! Dolor voluptate quis, blanditiis
+            enim sapiente esse? Minus perferendis ex, laboriosam, molestias assumenda nobis non, quam illo magni
+            asperiores veritatis.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <select name="searchSelector" id="searchSelector" class="form-control">
+                <option value="">Select a State...</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+          <table class="table" id="nationalParkTable">
+            <thead>
+              <tr class="parkRow">
+                
+                <th>LocationName:</th>
+                <th>Address:</th>
+                <th>City:</th>
+                <th>State:</th>
+                <th>ZipCode:</th>
+                <th>Phone:</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <script src="scripts/locationData.js"></script>
     <script src="scripts/mountainData.js"></script>

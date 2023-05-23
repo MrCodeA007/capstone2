@@ -14,3 +14,37 @@ body {
     background-size: 100vw 100vh;
     background-attachment: fixed;
  }
+ /*make background change over time ( low priority )*/
+
+ p {
+    font-size: x-large;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    color:black;
+    margin: 3em;
+   border: #333 double;
+   background-color: white;
+ }
+
+ h1 {
+   text-align: center;
+   color: black;
+   font-size: xx-large;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-style: italic;
+ }
+
+ .intro-border {
+    text-align: center;
+    border: #333;
+    
+ }
+
+ .row {
+   justify-content: center;
+ }
+
+.parkRow {
+   color: white;
+}
