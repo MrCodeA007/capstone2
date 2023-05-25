@@ -5,7 +5,7 @@ function dropdownmountainSelector() {
   for (i = 0; i < mountainsArray.length; i++) {
     let optionEl = document.createElement("option");
     const mountainInfo = mountainsArray[i];
-    optionEl.textContent = mountainInfo;
+    optionEl.textContent = mountainInfo.name;
     mountainSelectorEl.appendChild(optionEl);
   }
 }
