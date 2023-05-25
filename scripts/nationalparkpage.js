@@ -12,8 +12,14 @@ function dropdownSelector() {
 //--------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------
+
 function onsearchSelectorClickedChanged() {
     //one selected state or value
+  searchSelectorEl.addEventListener('change', () => {
+    const tbodyEl = document.querySelector("#nationalParkTable");
+    tbodyEl.innerHTML = "";
+  
+
   let selectedValue = searchSelectorEl.value;
   
   //an array of parks
@@ -26,7 +32,8 @@ function onsearchSelectorClickedChanged() {
 
   //console.log(selectedparks) worked;
 selectedparks.forEach((park) => {
-    const row = tableEl.insertRow();
+  
+    const row = tbodyEl.insertRow();
 
     const cellLocationName = row.insertCell();
     cellLocationName.innerHTML = park.LocationName;
@@ -45,12 +52,23 @@ selectedparks.forEach((park) => {
 
     const cellPhone = row.insertCell();
     cellPhone.innerHTML = park.Phone;
+
+    if (park.Address === 0) {
+      cellAddress.innerHTML = "Not available";
+    }
+    if (park.Phone === 0 ) {
+      cellPhone.innerHTML = "Not available"; 
+    }
+    if (park.ZipCode === 0) {
+      cellZipCode.innerHTML = "Not available";
+    }
+});
 });
   } 
 
 //-----------------------------------------------------------------------------
 
-const tableEl = document.getElementById(`nationalParkTable`)
+const tbodyEl = document.getElementById(`nationalParkTable`)
 searchSelectorEl.onchange = onsearchSelectorClickedChanged; 
 dropdownSelector();
 

@@ -45,7 +45,7 @@
                             </li>
 
                             <li>
-                                <a href="mountains-information-page.html" class="nav-link text-secondary">
+                                <a href="mountains-info-page.html" class="nav-link text-secondary">
                                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                         <use xlink:href="#table"></use>
                                     </svg>
@@ -73,11 +73,40 @@
         </div>
     </div>
     <!--Navbar close-->
+    <h1>Mountain Search Page</h1>
+    <div class="intro-border">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, esse! Dolor voluptate quis, blanditiis
+            enim sapiente esse? Minus perferendis ex, laboriosam, molestias assumenda nobis non, quam illo magni
+            asperiores veritatis.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <select name="mountainSelector" id="mountainSelector" class="form-control">
+                <option value="">Select a Mountain...</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+          <table class="table" id="mountainDataTable">
+            <thead>
+              <tr class="mountainRow">
+                <th>MountainName:</th>
+                <th>Description:</th>
+                <th>Elevation:</th>
+                <th>Info about mountain:</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
     <script src="scripts/locationData.js"></script>
     <script src="scripts/mountainData.js"></script>
     <script src="scripts/nationalParkData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="scripts/mountain-info-page.js"></script>
 </body>
 
 </html>
