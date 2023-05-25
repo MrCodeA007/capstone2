@@ -52,3 +52,8 @@ font-style: italic;
 .table {
    color: white;
 }
+
+div.controls {
+   justify-content: center;
+   
+}

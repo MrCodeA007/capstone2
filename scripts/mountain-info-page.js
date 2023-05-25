@@ -1,4 +1,9 @@
 `use strict`;
+//images of the mountains
+// const storyimageFiles = [
+//   { path: 'images/Adams-StoryImage_2.jpg'  }
+//   { path: ''}
+// ]
 
 const mountainSelectorEl = document.getElementById(`mountainSelector`);
 function dropdownmountainSelector() {
@@ -10,62 +15,77 @@ function dropdownmountainSelector() {
   }
 }
 //-------------------------------------------------------------------------
-function onmountainSelectorClickedChanged() {
-  //one selected state or value
-mountainSelectorEl.addEventListener('change', () => {
-  const tbodyEl = document.querySelector("#mountainDataTable");
-  tbodyEl.innerHTML = "";
+const mountainDivEl = document.getElementById('mountainInfo')
+
+ //one selected state or value
+  mountainSelectorEl.addEventListener('change', () => {
+
+ 
 
 
-let selectedValue = mountainSelectorEl.value;
+ let selectedValue = mountainSelectorEl.value;
 
 //an array of parks
-const selectedMountains = mountainsArray.filter(
-  // (park) => park.State === selectedValue (arrow function method)
-  function(mountains) {
-      return mountains.name === selectedValue;
-  }
-);
+const selectedmountain = mountainsArray.filter(
+   (mountain) => mountain.name === selectedValue )
+   console.log(selectedmountain);
 
-//console.log(selectedparks) worked;
-selectedMountains.forEach((mountains) => {
+   selectedmountain.forEach((mountain) => {
+    const row = tbodyEl.insertRow();
 
-  const row = tbodyEl.insertRow();
+    const cellName = row.insertCell();
+    cellName.innerHTML= mountain.name;
 
-  const cellLocationName = row.insertCell();
-  cellLocationName.innerHTML = mountains.name;
+    const cellDesc = row.insertCell();
+    cellDesc.innerHTML = mountain.desc;
 
-  const cellDescription = row.insertCell();
-  cellDescription.innerHTML = mountains.desc;
+    const cellElevation = row.insertCell();
+    cellElevation.innerHTML = mountain.elevation;
+   });
 
-  const cellElevation = row.insertCell();
-  cellElevation.innerHTML = mountains.elevation; 
 
-  // const cellState = row.insertCell();
-  // cellState.innerHTML = park.State;
 
-  // const cellZipCode = row.insertCell();
-  // cellZipCode.innerHTML = park.ZipCode;
+ //);
+// const tbodyEl = document.querySelector("tbody");
+// tbodyEl.innerHTML = "";
 
-  // const cellPhone = row.insertCell();
-  // cellPhone.innerHTML = park.Phone;
+// //console.log(selectedparks) worked;
+// selectedparks.forEach((park) => {
 
-  // if (park.Address === 0) {
-  //   cellAddress.innerHTML = "Not available";
-  // }
-  // if (park.Phone === 0 ) {
-  //   cellPhone.innerHTML = "Not available"; 
-  // }
-  // if (park.ZipCode === 0) {
-  //   cellZipCode.innerHTML = "Not available";
-  // }
+//   const row = tbodyEl.insertRow();
+
+//   const cellLocationName = row.insertCell();
+//   cellLocationName.innerHTML = park.LocationName;
+
+//   const cellAddress = row.insertCell();
+//   cellAddress.innerHTML = park.Address;
+
+//   const cellCity = row.insertCell();
+//   cellCity.innerHTML = park.City;
+
+//   const cellState = row.insertCell();
+//   cellState.innerHTML = park.State;
+
+//   const cellZipCode = row.insertCell();
+//   cellZipCode.innerHTML = park.ZipCode;
+
+//   const cellPhone = row.insertCell();
+//   cellPhone.innerHTML = park.Phone;
+
+//   if (park.Address === 0) {
+//     cellAddress.innerHTML = "Not available";
+//   }
+//   if (park.Phone === 0 ) {
+//     cellPhone.innerHTML = "Not available"; 
+//   }
+//   if (park.ZipCode === 0) {
+//     cellZipCode.innerHTML = "Not available";
+//   }
 });
-});
-} 
+ //});
+
 
 //-----------------------------------------------------------------------------
 
 const tbodyEl = document.getElementById(`mountainDataTable`)
-mountainSelectorEl.onchange = onmountainSelectorClickedChanged; 
-
 dropdownmountainSelector();

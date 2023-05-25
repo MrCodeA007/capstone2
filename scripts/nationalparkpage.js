@@ -13,22 +13,21 @@ function dropdownSelector() {
 
 //--------------------------------------------------------------------------------------
 
-function onsearchSelectorClickedChanged() {
+
     //one selected state or value
   searchSelectorEl.addEventListener('change', () => {
-    const tbodyEl = document.querySelector("#nationalParkTable");
-    tbodyEl.innerHTML = "";
+    // const tbodyEl = document.querySelector("#nationalParkTable");
+    // tbodyEl.innerHTML = "";
   
 
   let selectedValue = searchSelectorEl.value;
   
   //an array of parks
   const selectedparks = nationalParksArray.filter(
-    // (park) => park.State === selectedValue (arrow function method)
-    function(park) {
-        return park.State === selectedValue;
-    }
+     (park) => park.State === selectedValue 
   );
+  const tbodyEl = document.querySelector("tbody");
+  tbodyEl.innerHTML = "";
 
   //console.log(selectedparks) worked;
 selectedparks.forEach((park) => {
@@ -64,12 +63,12 @@ selectedparks.forEach((park) => {
     }
 });
 });
-  } 
+  
 
 //-----------------------------------------------------------------------------
 
 const tbodyEl = document.getElementById(`nationalParkTable`)
-searchSelectorEl.onchange = onsearchSelectorClickedChanged; 
+ 
 dropdownSelector();
 
 

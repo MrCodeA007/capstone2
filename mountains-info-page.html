@@ -39,7 +39,7 @@
                                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                         <use xlink:href="#home"></use>
                                     </svg>
-                                    Home 
+                                    Home
                                     <i class="bi bi-house"></i>
                                 </a>
                             </li>
@@ -60,7 +60,7 @@
                                     </svg>
 
                                     National park Info
-                                    <i class="bi bi-bicycle"></i>  
+                                    <i class="bi bi-bicycle"></i>
                                 </a>
                             </li>
 
@@ -79,28 +79,31 @@
             enim sapiente esse? Minus perferendis ex, laboriosam, molestias assumenda nobis non, quam illo magni
             asperiores veritatis.</p>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <select name="mountainSelector" id="mountainSelector" class="form-control">
-                <option value="">Select a Mountain...</option>
+    <div class="controls">
+        <select name="mountainSelector" id="mountainSelector">
+            <option value="">Select a Mountain...</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <table class="table" id="mountainDataTable">
+                    <thead>
+                        <tr class="mountainRow">
 
-            </select>
+                            <th>mountainName:</th>
+                            <th>desc:</th>
+                            <th>elevation:</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="col-6">
+                <div id="images"></div>
+            </div>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col">
-          <table class="table" id="mountainDataTable">
-            <thead>
-              <tr class="mountainRow">
-                <th>MountainName:</th>
-                <th>Description:</th>
-                <th>Elevation:</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
     <script src="scripts/locationData.js"></script>
     <script src="scripts/mountainData.js"></script>
     <script src="scripts/nationalParkData.js"></script>
