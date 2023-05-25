@@ -1,10 +1,6 @@
 `use strict`;
-//images of the mountains
-// const storyimageFiles = [
-//   { path: 'images/Adams-StoryImage_2.jpg'  }
-//   { path: ''}
-// ]
 
+const imageEl = document.getElementById(`images`);
 const mountainSelectorEl = document.getElementById(`mountainSelector`);
 function dropdownmountainSelector() {
   for (i = 0; i < mountainsArray.length; i++) {
@@ -28,7 +24,12 @@ const mountainDivEl = document.getElementById('mountainInfo')
 //an array of parks
 const selectedmountain = mountainsArray.filter(
    (mountain) => mountain.name === selectedValue )
-   console.log(selectedmountain);
+  
+
+   const tbodyEl = document.querySelector("tbody");
+    tbodyEl.innerHTML = "";
+imageEl.innerHTML = "";
+
 
    selectedmountain.forEach((mountain) => {
     const row = tbodyEl.insertRow();
@@ -41,13 +42,19 @@ const selectedmountain = mountainsArray.filter(
 
     const cellElevation = row.insertCell();
     cellElevation.innerHTML = mountain.elevation;
+
+const imgEl = document.createElement(`img`)
+imgEl.src = `./images/${mountain.img}`;
+imgEl.alt = mountain.name;
+imageEl.appendChild(imgEl);
    });
+   
+
 
 
 
  //);
-// const tbodyEl = document.querySelector("tbody");
-// tbodyEl.innerHTML = "";
+//
 
 // //console.log(selectedparks) worked;
 // selectedparks.forEach((park) => {
