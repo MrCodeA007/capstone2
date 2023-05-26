@@ -1,7 +1,9 @@
 `use strict`;
-
+//gathered inputs
 const imageEl = document.getElementById(`images`);
 const mountainSelectorEl = document.getElementById(`mountainSelector`);
+
+//function to display the mountain names from the mountainsArray in mountainData.js
 function dropdownmountainSelector() {
   for (i = 0; i < mountainsArray.length; i++) {
     let optionEl = document.createElement("option");
@@ -27,13 +29,15 @@ const selectedmountain = mountainsArray.filter(
   
 
    const tbodyEl = document.querySelector("tbody");
+  // set before inserting the rows to clear the previous set tables first until showing the new selected state
     tbodyEl.innerHTML = "";
 imageEl.innerHTML = "";
 
-
+//insert row into tbody in html
    selectedmountain.forEach((mountain) => {
     const row = tbodyEl.insertRow();
 
+    // insert cell(s) into the row we have put into the tbody to put in a called property into it from the mountains array.
     const cellName = row.insertCell();
     cellName.innerHTML= mountain.name;
 
@@ -50,46 +54,8 @@ imageEl.appendChild(imgEl);
    });
    
 
-
-
-
- //);
-//
-
-// //console.log(selectedparks) worked;
-// selectedparks.forEach((park) => {
-
-//   const row = tbodyEl.insertRow();
-
-//   const cellLocationName = row.insertCell();
-//   cellLocationName.innerHTML = park.LocationName;
-
-//   const cellAddress = row.insertCell();
-//   cellAddress.innerHTML = park.Address;
-
-//   const cellCity = row.insertCell();
-//   cellCity.innerHTML = park.City;
-
-//   const cellState = row.insertCell();
-//   cellState.innerHTML = park.State;
-
-//   const cellZipCode = row.insertCell();
-//   cellZipCode.innerHTML = park.ZipCode;
-
-//   const cellPhone = row.insertCell();
-//   cellPhone.innerHTML = park.Phone;
-
-//   if (park.Address === 0) {
-//     cellAddress.innerHTML = "Not available";
-//   }
-//   if (park.Phone === 0 ) {
-//     cellPhone.innerHTML = "Not available"; 
-//   }
-//   if (park.ZipCode === 0) {
-//     cellZipCode.innerHTML = "Not available";
-//   }
 });
- //});
+ 
 
 
 //-----------------------------------------------------------------------------
