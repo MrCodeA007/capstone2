@@ -1,5 +1,5 @@
 `use strict`;
-
+//gets the select from html
 const searchSelectorEl = document.getElementById(`searchSelector`);
 function dropdownSelector() {
   for (i = 0; i < locationsArray.length; i++) {
@@ -10,14 +10,20 @@ function dropdownSelector() {
   }
 }
 //--------------------------------------------------------------------------------------
+// const dropdownSelector = ()=>  {
+//   for (i = 0; i < locationsArray.length; i++) {
+//     let optionEl = document.createElement("option");
+//     const locationAreas = locationsArray[i];
+//     optionEl.textContent = locationAreas;
+//     searchSelectorEl.appendChild(optionEl);
+//   }
+// }
 
 //--------------------------------------------------------------------------------------
 
 
     //one selected state or value
   searchSelectorEl.addEventListener('change', () => {
-    // const tbodyEl = document.querySelector("#nationalParkTable");
-    // tbodyEl.innerHTML = "";
   
 
   let selectedValue = searchSelectorEl.value;
