@@ -13,3 +13,15 @@ const parkTypesArray = [
     "Trail",
     "Parkway"
 ]
+
+const parktypeSelectorEl = document.getElementById(`parktypeSelector`);
+function parktypedropdownSelector() {
+  for (i = 0; i < parkTypesArray.length; i++) {
+    let optionEl = document.createElement("option");
+    const parkLocations = parkTypesArray[i];
+    optionEl.textContent = parkLocations;
+    parktypeSelectorEl.appendChild(optionEl);
+  }
+}
+
+parktypedropdownSelector();
